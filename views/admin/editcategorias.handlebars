@@ -1,0 +1,24 @@
+{{#if success_msg}}
+    <div class="alert alert-success">{{success_msg}}</div>
+    {{else}}
+{{/if}}
+
+{{#if error_msg}}
+    <div class="alert alert-danger">{{error_msg}}</div>
+    {{else}}
+{{/if}}
+
+
+<h3>Atualizar Categoria</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/categorias/edit" method="post">
+            <input type="hidden" name="txtId" value="{{object._id}}">
+            <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="txtNome" placeholder="Nome da categoria" value="{{object.nome}}" class="form-control mb-4" required>
+            <label for="slug">Slug:</label>
+                <input type="text" id="slug" name="txtSlug" placeholder="Slug da categoria" value="{{object.slug}}" class="form-control mb-4" required>
+            <button type="submit" class="btn btn-success">Atualizar Categoria</button>
+        </form>
+    </div>
+</div>
